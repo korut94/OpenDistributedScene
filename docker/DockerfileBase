@@ -1,0 +1,24 @@
+FROM aberaud/opendht-deps
+MAINTAINER Andrea Mantovani <andreamnt94@gmail.com>
+
+# Declare Environment Variables
+ENV DHT_NODE_PORT 4222
+
+# Install SCons
+RUN apt-get update && apt-get install -y scons
+
+# Clone the OpenDHT repo
+RUN git clone https://github.com/savoirfairelinux/opendht.git
+
+# Build and install OpenDHT
+RUN cd opendht \
+	&& mkdir build && cd build \ 
+	&& cmake -DOPENDHT_PYTHON=OFF \ 
+			 -DOPENDHT_BUILD_TOOLS=ON \
+			 -DOPENDHT_PROXY_SERVER=ON \
+			 -DOPENDHT_PROXY_SERVER_IDENTITY=ON \
+			 -DOPENDHT_PROXY_CLIENT=ON \
+			 -DOPENDHT_PUSH_NOTIFICATIONS=ON \
+			 -DCMAKE_INSTALL_PREFIX=/usr .. \
+	&& make -j4 \
+	&& make install
