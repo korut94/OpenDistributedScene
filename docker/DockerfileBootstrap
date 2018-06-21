@@ -1,11 +1,7 @@
 FROM korut94/odscene-base
 MAINTAINER Andrea Mantovani <andreamnt94@gmail.com>
 
-# Clone OpenDistributedScene repository
-RUN git clone https://github.com/korut94/OpenDistributedScene.git
-
 # Build the boostrapper node
-RUN cd OpenDistributedScene \
-	&& scons -Q
+RUN scons -Q
 
-ENTRYPOINT ["build/bootstrap"]
+ENTRYPOINT ["build/bootstrap"]
