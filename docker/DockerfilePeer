@@ -1,0 +1,7 @@
+FROM korut94/odscene-base
+MAINTAINER Andrea Mantovani <andreamnt94@gmail.com>
+
+# Build the boostrapper node
+RUN scons -Q
+
+ENTRYPOINT ["build/peer"]
