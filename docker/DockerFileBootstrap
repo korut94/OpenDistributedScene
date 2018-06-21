@@ -1,5 +1,5 @@
 FROM korut94/odscene-base
-MANTAINER Andrea Mantovani <andreamnt94@gmail.com>
+MAINTAINER Andrea Mantovani <andreamnt94@gmail.com>
 
 # Clone OpenDistributedScene repository
 RUN git clone https://github.com/korut94/OpenDistributedScene.git
