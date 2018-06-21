@@ -21,3 +21,8 @@ RUN cd opendht \
 			 -DCMAKE_INSTALL_PREFIX=/usr .. \
 	&& make -j4 \
 	&& make install
+
+# Clone OpenDistributedScene repository
+RUN git clone https://github.com/korut94/OpenDistributedScene.git -b develop
+
+WORKDIR OpenDistributedScene
