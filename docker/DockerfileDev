@@ -5,7 +5,7 @@ MAINTAINER Andrea Mantovani <andreamnt94@gmail.com>
 ENV DHT_NODE_PORT 4222
 
 # Create the `source` directory will be used as mounting point for the source code
-RUN mkdir source
-VOLUME source
+RUN mkdir /source
+VOLUME /source
 
-WORKDIR source
+WORKDIR /source
