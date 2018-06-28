@@ -2,6 +2,6 @@ FROM korut94/odscene-base
 MAINTAINER Andrea Mantovani <andreamnt94@gmail.com>
 
 # Build the boostrapper node
-RUN scons -Q
+RUN scons -Q tools=bootstrap
 
-ENTRYPOINT ["build/bootstrap"]
+ENTRYPOINT ["tools/build/bootstrap"]
