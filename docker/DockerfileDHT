@@ -22,7 +22,7 @@ RUN cd opendht \
 	&& make -j4 \
 	&& make install
 
-# Set mounting point for devel pourpose
+# Set mounting point to devel purpose
 VOLUME /tmp
 
 WORKDIR /tmp
