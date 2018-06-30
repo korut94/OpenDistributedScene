@@ -1,7 +1,4 @@
-FROM korut94/odscene-base
+FROM korut94/odscene-dht
 MAINTAINER Andrea Mantovani <andreamnt94@gmail.com>
 
-# Build the boostrapper node
-RUN scons -Q tools=bootstrap --no-lib
-
-ENTRYPOINT ["tools/build/bootstrap"]
+ENTRYPOINT dhtnode -p ${DHT_NODE_PORT}
