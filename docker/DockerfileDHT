@@ -3,6 +3,8 @@ MAINTAINER Andrea Mantovani <andreamnt94@gmail.com>
 
 # DHT Node port to stay in listening
 ENV DHT_NODE_PORT 4222
+# Default running node to make the bootstrapping on the network
+ENV DHT_NODE_BOOTSTRAP ods.bootstrap.local
 
 # Install SCons
 RUN apt-get update && apt-get install -y scons
